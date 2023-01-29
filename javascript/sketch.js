@@ -9,13 +9,9 @@ let food = 0;
 let feeding = false;
 
 
-function preload(){
-  hand = loadModel('hand-free.obj');
-}
-
 function setup() {
   
-  canvas = createCanvas(1280, 720, WEBGL);
+  canvas = createCanvas(windowWidth, windowHeight -200, WEBGL);
   canvas.parent("sketch-container");
   createEasyCam();
   document.oncontextmenu = ()=>false;
@@ -270,4 +266,8 @@ function handleButtonPress()
       button.addClass("inactive");
     }
     
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight-200);
 }
